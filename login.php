@@ -77,7 +77,8 @@ if(isset($_POST['Username'])) {
         echo "Data Tidak Boleh kosong";
     } else {
         $userquery = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM 
-        admin WHERE Username = '$Username' AND Password = '$Password' "));
+        users WHERE username = '$Username' AND password = '$Password' "));
+        
         if($userquery) {
             $_SESSION['level'] = 'admin';
             $_SESSION['Username'] = $Username;

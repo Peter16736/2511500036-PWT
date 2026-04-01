@@ -1,7 +1,7 @@
 <?php
   session_start();
   require_once("config/koneksi.php");
-  if(isset($_SESSION['username'])){
+  if(isset($_SESSION['Username'])){
 ?>
 <!DOCTYPE html>
 <!--
@@ -117,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="index.php?page=mapel" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Mata Pelajaran</p>
+                  <p>Mapel</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -202,7 +202,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <h5 class="card-title">Card title</h5>
 
                 <p class="card-text">
-                  <?php 
                     <?php
                       if (isset($_GET['page'])) {
                           $page = $_GET['page'];
