@@ -43,21 +43,18 @@ if (isset($_POST['tambah'])) {
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="kd_mapel">Kode Mapel</label>
-                            <input type="text" name="kd_mapel" value="<?= $edit['
-                                kd_mapel']; ?>" class="form-control" readonly>
+                            <input type="text" name="kd_mapel" value="<?= $edit['kd_mapel']; ?>" class="form-control" readonly>
                         </div>
 
                         <div class="form-group">
                             <label for="nm_mapel">Nama Mapel</label>
-                            <input type="text" name="nm_mapel" value="<?= $edit['
-                                nm_mapel']; ?>" id="nm_mapel" placeholder="Nama
+                            <input type="text" name="nm_mapel" value="<?= $edit['nm_mapel']; ?>" id="nm_mapel" placeholder="Nama
                                 mapel" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="kkm">KKM</label>
-                            <input type="text" name="kkm" value="<?= $edit['kkm']
-                                ; ?>" id="kkm" placeholder="KKM" class="form-control">
+                            <input type="text" name="kkm" value="<?= $edit['kkm']; ?>" id="kkm" placeholder="KKM" class="form-control">
                         </div>
 
                         <div class="card-footer">
