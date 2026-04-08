@@ -16,7 +16,7 @@ if (isset($_POST['tambah'])) {
     $kd_kelas = $_POST['kd_kelas'];
     $nm_kelas = $_POST['nm_kelas'];
 
-    $insert = mysqli_query($koneksi, "UPDATE kelas SET nm_kelas='$nm_kelas', WHERE kd_kelas='$kd_kelas'");
+    $insert = mysqli_query($koneksi, "UPDATE kelas SET nm_kelas='$nm_kelas' WHERE kd_kelas='$kd_kelas'");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
