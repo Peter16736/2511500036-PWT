@@ -10,7 +10,7 @@
 <?php
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $kd = $_GET['kd'];
+        $kd = $_GET['nip'];
         $query = mysqli_query($koneksi, "DELETE FROM guru where nip_guru = '$nip'");
         if ($query) {
             echo '
@@ -50,6 +50,7 @@ if (isset($_GET['action'])) {
             <td><?= $result['nip_guru']; ?></td>
             <td><?= $result['nm_guru']; ?></td>
             <td>
+
               <a href="index.php?page=guru&action=hapus&kd=<?= $result['nip_guru'] ?>" title="">
                 <span class="badge badge-danger">Hapus</span>
               </a>
