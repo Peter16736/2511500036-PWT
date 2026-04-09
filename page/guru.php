@@ -33,7 +33,7 @@ if (isset($_GET['action'])) {
         <thead>
           <tr>
             <th>NO</th>
-            <th>kd guru</th>
+            <th>Kode guru</th>
             <th>Nama guru</th>
             <th>Aksi</th>
           </tr>
