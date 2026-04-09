@@ -10,8 +10,8 @@
 <?php
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $kd = $_GET['nip'];
-        $query = mysqli_query($koneksi, "DELETE FROM guru where nip_guru = '$nip'");
+        $kd = $_GET['kd'];
+        $query = mysqli_query($koneksi, "DELETE FROM guru where kd_guru = '$kd'");
         if ($query) {
             echo '
             <div class="alert alert-warning alert-dismissible">
@@ -33,7 +33,7 @@ if (isset($_GET['action'])) {
         <thead>
           <tr>
             <th>NO</th>
-            <th>NIP guru</th>
+            <th>kd guru</th>
             <th>Nama guru</th>
             <th>Aksi</th>
           </tr>
@@ -47,14 +47,14 @@ if (isset($_GET['action'])) {
         <tbody>
           <tr>
             <td><?= $no; ?></td>
-            <td><?= $result['nip_guru']; ?></td>
+            <td><?= $result['kd_guru']; ?></td>
             <td><?= $result['nm_guru']; ?></td>
             <td>
 
-              <a href="index.php?page=guru&action=hapus&kd=<?= $result['nip_guru'] ?>" title="">
+              <a href="index.php?page=guru&action=hapus&kd=<?= $result['kd_guru'] ?>" title="">
                 <span class="badge badge-danger">Hapus</span>
               </a>
-              <a href="index.php?page=edit_guru&kd=<?= $result['nip_guru'] ?>" title="">
+              <a href="index.php?page=edit_guru&kd=<?= $result['kd_guru'] ?>" title="">
                 <span class="badge badge-warning">Edit</span>
               </a>
             </td>

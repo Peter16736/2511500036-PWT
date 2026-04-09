@@ -10,7 +10,7 @@
 
 <?php
 // kode otomatis
-$carikode = mysqli_query($koneksi, "select max(nip_guru) from guru") or die(mysqli_error());
+$carikode = mysqli_query($koneksi, "select max(kd_guru) from guru") or die(mysqli_error());
 $datakode = mysqli_fetch_array($carikode);
 
 if ($datakode) {
@@ -25,10 +25,10 @@ if ($datakode) {
 $_SESSION["KODE"] = $hasilkode;
 
 if (isset($_POST['tambah'])) {
-    $nip_guru = $_POST['nip_guru'];
+    $kd_guru = $_POST['kd_guru'];
     $nm_guru = $_POST['nm_guru'];
 
-    $insert = mysqli_query($koneksi, "INSERT INTO guru VALUES ('$nip_guru','$nm_guru')");
+    $insert = mysqli_query($koneksi, "INSERT INTO guru VALUES ('$kd_guru','$nm_guru')");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
@@ -53,8 +53,8 @@ if (isset($_POST['tambah'])) {
           <form method="POST" action="">
             
             <div class="form-group">
-              <label for="nip_guru">NIP guru</label>
-              <input type="text" name="nip_guru" 
+              <label for="kd_guru">kd guru</label>
+              <input type="text" name="kd_guru" 
                      value="<?= $hasilkode; ?>" 
                      placeholder="Id Kat" 
                      class="form-control" readonly>

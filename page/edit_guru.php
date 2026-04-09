@@ -10,13 +10,13 @@
 
 <?php
 $kd = $_GET['kd'];
-$edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM guru WHERE nip_guru='$nip'"));
+$edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM guru WHERE kd_guru='$kd'"));
 
 if (isset($_POST['tambah'])) {
-    $nip_guru = $_POST['nip_guru'];
+    $kd_guru = $_POST['kd_guru'];
     $nm_guru = $_POST['nm_guru'];
 
-    $insert = mysqli_query($koneksi, "UPDATE guru SET nm_guru='$nm_guru' WHERE nip_guru='$nip_guru'");
+    $insert = mysqli_query($koneksi, "UPDATE guru SET nm_guru='$nm_guru' WHERE kd_guru='$kd_guru'");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
@@ -41,8 +41,8 @@ if (isset($_POST['tambah'])) {
                 <div class="card-body p-2">
                     <form method="post" action="">
                         <div class="form-group">
-                            <label for="nip_guru">NIP guru</label>
-                            <input type="text" name="nip_guru" value="<?= $edit['nip_guru']; ?>" class="form-control" readonly>
+                            <label for="kd_guru">kd guru</label>
+                            <input type="text" name="kd_guru" value="<?= $edit['kd_guru']; ?>" class="form-control" readonly>
                         </div>
 
                         <div class="form-group">
