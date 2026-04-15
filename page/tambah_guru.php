@@ -27,8 +27,12 @@ $_SESSION["KODE"] = $hasilkode;
 if (isset($_POST['tambah'])) {
     $kd_guru = $_POST['kd_guru'];
     $nm_guru = $_POST['nm_guru'];
+    $jns_klmn = $_POST['jns_klmn'];
+    $pnddkn_trkhr = $_POST['pnddkn_trkhr'];
+    $no_hp = $_POST['no_hp'];
+    $almt = $_POST['almt'];
 
-    $insert = mysqli_query($koneksi, "INSERT INTO guru VALUES ('$kd_guru','$nm_guru')");
+    $insert = mysqli_query($koneksi, "INSERT INTO guru VALUES ('$kd_guru','$nm_guru','$jns_klmn','$pnddkn_trkhr','$no_hp','$almt')");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
@@ -64,6 +68,34 @@ if (isset($_POST['tambah'])) {
               <label for="nm_guru">Nama guru</label>
               <input type="text" name="nm_guru" id="nm_guru" 
                      placeholder="Nama guru" 
+                     class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="nm_guru">Jenis Kelamin</label>
+              <input type="text" name="jns_klmn" id="jns_klmn" 
+                     placeholder="Jenis Kelamin" 
+                     class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="nm_guru">Pendidikan Terakhir</label>
+              <input type="text" name="pnddkn_trkhr" id="pnddkn_trkhr" 
+                     placeholder="Pendidikan Terakhir" 
+                     class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="nm_guru">No HP</label>
+              <input type="text" name="no_hp" id="no_hp" 
+                     placeholder="NO HP" 
+                     class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="nm_guru">Alamat</label>
+              <input type="text" name="almt" id="almt" 
+                     placeholder="Alamat" 
                      class="form-control">
             </div>
 
