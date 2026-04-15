@@ -72,15 +72,17 @@ if (isset($_POST['tambah'])) {
             </div>
 
             <div class="form-group">
-              <label for="nm_guru">Jenis Kelamin</label>
-              <input type="text" name="jns_klmn" id="jns_klmn" 
-                     placeholder="Jenis Kelamin" 
+              <label for="jns_klmn">Jenis Kelamin</label>
+              <select name="jns_klmn" id="jns_klmn" 
                      class="form-control">
+                     <option value="">-- Pilih --</option>
+                     <option value="L">Laki-laki</option>
+                     <option value="P">Perempuan</option>
             </div>
 
             <div class="form-group">
-              <label for="nm_guru">Pendidikan Terakhir</label>
-              <input type="text" name="pnddkn_trkhr" id="pnddkn_trkhr" 
+              <label for="pndkkn_trkhr">Pendidikan Terakhir</label>
+              <input type="text" name="pndkkn_trkhr" id="pndkkn_trkhr" 
                      placeholder="Pendidikan Terakhir" 
                      class="form-control">
             </div>

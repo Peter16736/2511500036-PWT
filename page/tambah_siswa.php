@@ -27,6 +27,7 @@ $_SESSION["KODE"] = $hasilkode;
 if (isset($_POST['tambah'])) {
     $kd_siswa = $_POST['kd_siswa'];
     $nm_siswa = $_POST['nm_siswa'];
+    
 
     $insert = mysqli_query($koneksi, "INSERT INTO siswa VALUES ('$kd_siswa','$nm_siswa')");
 

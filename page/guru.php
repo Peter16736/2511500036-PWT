@@ -54,7 +54,7 @@ if (isset($_GET['action'])) {
             <td><?= $result['kd_guru']; ?></td>
             <td><?= $result['nm_guru']; ?></td>
             <td><?= $result['jns_klmn']; ?></td>
-            <td><?= $result['pnddkn_trkhr']; ?></td>
+            <td><?= $result['pndkkn_trkhr']; ?></td>
             <td><?= $result['no_hp']; ?></td>
             <td><?= $result['almt']; ?></td>
             <td>
