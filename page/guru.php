@@ -35,6 +35,10 @@ if (isset($_GET['action'])) {
             <th>NO</th>
             <th>Kode guru</th>
             <th>Nama guru</th>
+            <th>Jenis Kelamin</th>
+            <th>Pendidikan Terakhir</th>
+            <th>NO HP</th>
+            <th>Alamat</th>
             <th>Aksi</th>
           </tr>
         <thead>
@@ -49,6 +53,10 @@ if (isset($_GET['action'])) {
             <td><?= $no; ?></td>
             <td><?= $result['kd_guru']; ?></td>
             <td><?= $result['nm_guru']; ?></td>
+            <td><?= $result['jns_klmn']; ?></td>
+            <td><?= $result['pnddkn_trkhr']; ?></td>
+            <td><?= $result['no_hp']; ?></td>
+            <td><?= $result['almt']; ?></td>
             <td>
 
               <a href="index.php?page=guru&action=hapus&kd=<?= $result['kd_guru'] ?>" title="">

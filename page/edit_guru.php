@@ -15,6 +15,10 @@ $edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM guru WHERE kd_g
 if (isset($_POST['tambah'])) {
     $kd_guru = $_POST['kd_guru'];
     $nm_guru = $_POST['nm_guru'];
+    $jns_klmn = $_POST['jns_klmn'];
+    $pnddkn_trkhr = $_POST['pnddkn_trkhr'];
+    $no_hp = $_POST['no_hp'];
+    $almt = $_POST['almt'];
 
     $insert = mysqli_query($koneksi, "UPDATE guru SET nm_guru='$nm_guru' WHERE kd_guru='$kd_guru'");
 
@@ -49,6 +53,30 @@ if (isset($_POST['tambah'])) {
                             <label for="nm_guru">Nama guru</label>
                             <input type="text" name="nm_guru" value="<?= $edit['nm_guru']; ?>" id="nm_guru" placeholder="Nama
                                 guru" class="form-control">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="nm_guru">Jenis Kelamin</label>
+                            <input type="text" name="jns_klmn" value="<?= $edit['jns_klmn']; ?>" id="jns_klmn" placeholder="Jenis
+                                Kelamin" class="form-control">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="nm_guru">Pendidikan Terakhir</label>
+                            <input type="text" name="pnddkn_trkhr" value="<?= $edit['pnddkn_trkhr']; ?>" id="pndkkn_trkhr" placeholder="Pendidikan
+                                Terakhir" class="form-control">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="nm_guru">NO HP</label>
+                            <input type="text" name="no_hp" value="<?= $edit['no_hp']; ?>" id="no_hp" placeholder="NO
+                                HP" class="form-control">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="nm_guru">Alamat</label>
+                            <input type="text" name="almt" value="<?= $edit['almt']; ?>" id="almt" placeholder="Alamat
+                                " class="form-control">
                         </div>
 
                         <div class="card-footer">
