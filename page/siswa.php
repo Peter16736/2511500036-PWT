@@ -10,8 +10,8 @@
 <?php
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $kd = $_GET['kd'];
-        $query = mysqli_query($koneksi, "DELETE FROM siswa where kd_siswa = '$kd'");
+        $nis = $_GET['nis'];
+        $query = mysqli_query($koneksi, "DELETE FROM siswaa where nis = '$nis'");
         if ($query) {
             echo '
             <div class="alert alert-warning alert-dismissible">
@@ -43,7 +43,7 @@ if (isset($_GET['action'])) {
         <thead>
         <?php
         $no = 0;
-        $query = mysqli_query($koneksi, "SELECT * FROM siswa");
+        $query = mysqli_query($koneksi, "SELECT * FROM siswaa");
         while ($result = mysqli_fetch_array($query)) {
           $no++
         ?>  
@@ -57,10 +57,10 @@ if (isset($_GET['action'])) {
             <td><?= $result['id_kelas']; ?></td>
             <td>
 
-              <a href="index.php?page=siswa&action=hapus&kd=<?= $result['id_siswa'] ?>" title="">
+              <a href="index.php?page=siswa&action=hapus&kd=<?= $result['nis'] ?>" title="">
                 <span class="badge badge-danger">Hapus</span>
               </a>
-              <a href="index.php?page=edit_siswa&kd=<?= $result['id_siswa'] ?>" title="">
+              <a href="index.php?page=edit_siswa&kd=<?= $result['nis'] ?>" title="">
                 <span class="badge badge-warning">Edit</span>
               </a>
             </td>

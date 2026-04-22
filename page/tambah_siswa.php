@@ -10,7 +10,7 @@
 
 <?php
 // kode otomatis
-$carikode = mysqli_query($koneksi, "select max(kd_siswa) from siswa") or die(mysqli_error());
+$carikode = mysqli_query($koneksi, "select max(nis) from siswaa") or die(mysqli_error());
 $datakode = mysqli_fetch_array($carikode);
 
 if ($datakode) {
@@ -25,14 +25,14 @@ if ($datakode) {
 $_SESSION["KODE"] = $hasilkode;
 
 if (isset($_POST['tambah'])) {
-    $kd_siswa = $_POST['kd_siswa'];
+    $nis = $_POST['nis'];
     $nm_siswa = $_POST['nm_siswa'];
     $jenkel = $_POST['jenkel'];
     $hp = $_POST['hp'];
     $id_kelas = $_POST['id_kelas'];
     
 
-    $insert = mysqli_query($koneksi, "INSERT INTO siswa VALUES ('$id_siswa','$nm_siswa','$jenkel','$hp','$id_kelas')");
+    $insert = mysqli_query($koneksi, "INSERT INTO siswaa VALUES ('$nis','$nm_siswa','$jenkel','$hp','$id_kelas')");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
@@ -57,8 +57,8 @@ if (isset($_POST['tambah'])) {
           <form method="POST" action="">
             
             <div class="form-group">
-              <label for="id_siswa">id siswa</label>
-              <input type="text" name="id_siswa" 
+              <label for="nis">nis</label>
+              <input type="text" name="nis" 
                      value="<?= $hasilkode; ?>" 
                      placeholder="Id Kat" 
                      class="form-control" readonly>
@@ -72,8 +72,8 @@ if (isset($_POST['tambah'])) {
             </div>
 
             <div class="form-group">
-              <label for="jns_klmn">Jenis Kelamin</label>
-              <select name="jns_klmn" id="jns_klmn" 
+              <label for="jenkel">Jenis Kelamin</label>
+              <select name="jenkel" id="jenkel" 
                      class="form-control">
                      <option value="">-- Pilih --</option>
                      <option value="L">Laki-laki</option>

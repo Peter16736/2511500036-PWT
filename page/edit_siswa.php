@@ -9,14 +9,17 @@
 </div>
 
 <?php
-$kd = $_GET['kd'];
-$edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM siswa WHERE kd_siswa='$kd'"));
+$nis = $_GET['nis'];
+$edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM siswaa WHERE nis='$nis'"));
 
 if (isset($_POST['tambah'])) {
-    $kd_siswa = $_POST['kd_siswa'];
+    $nis = $_POST['nis'];
     $nm_siswa = $_POST['nm_siswa'];
+    $jenkel = $_POST['jenkel'];
+    $hp = $_POST['hp'];
+    $id_kelas = $_POST['id_kelas'];
 
-    $insert = mysqli_query($koneksi, "UPDATE siswa SET nm_siswa='$nm_siswa' WHERE kd_siswa='$kd_siswa'");
+    $insert = mysqli_query($koneksi, "UPDATE siswaa SET nm_siswaa='$nm_siswa' WHERE nis='$nis'");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
@@ -41,13 +44,34 @@ if (isset($_POST['tambah'])) {
                 <div class="card-body p-2">
                     <form method="post" action="">
                         <div class="form-group">
-                            <label for="kd_siswa">Kode Siswa</label>
-                            <input type="text" name="kd_siswa" value="<?= $edit['id_siswa']; ?>" class="form-control" readonly>
+                            <label for="nis">NIS</label>
+                            <input type="text" name="nis" value="<?= $edit['nis']; ?>" class="form-control" readonly>
                         </div>
 
                         <div class="form-group">
                             <label for="nm_siswa">Nama Siswa</label>
                             <input type="text" name="nm_siswa" value="<?= $edit['nm_siswa']; ?>" id="nm_siswa" placeholder="Nama
+                                siswa" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jenkel">Jenis Kelamin</label>
+                           <select name="jenkel" id="jenkel" class="form-control">
+                            <option value="">-- Pilih --</option>
+                            <option value="L" <?= ($edit['jenkel'] == 'L') ? 'selected' : '' ?>>Laki-laki</option>
+                            <option value="P" <?= ($edit['jenkel'] == 'P') ? 'selected' : '' ?>>Perempuan</option>
+                           </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hp">No HP</label>
+                            <input type="text" name="hp" value="<?= $edit['hp']; ?>" id="hp" placeholder="Nama
+                                siswa" class="form-control">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="id_kelas">Id Kelas</label>
+                            <input type="text" name="id_kelas" value="<?= $edit['id_kelas']; ?>" id="id_kelas" placeholder="Nama
                                 siswa" class="form-control">
                         </div>
 

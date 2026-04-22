@@ -55,12 +55,12 @@ if (isset($_POST['tambah'])) {
                                 guru" class="form-control">
                         </div>
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <label for="nm_guru">Jenis Kelamin</label>
                            <select name="jns_klmn" id="jns_klmn" class="form-control">
                             <option value="">-- Pilih --</option>
                             <option value="L" <?= ($edit['jns_klmn'] == 'L') ? 'selected' : '' ?>>Laki-laki</option>
-                            <option value="P" <?= ($edit['jns_klmn'] == 'L') ? 'selected' : '' ?>>Perempuan</option>
+                            <option value="P" <?= ($edit['jns_klmn'] == 'P') ? 'selected' : '' ?>>Perempuan</option>
                            </select>
                         </div>
 
