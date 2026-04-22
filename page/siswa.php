@@ -10,7 +10,7 @@
 <?php
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $nis = $_GET['nis'];
+        $nis = $_GET['kd'];
         $query = mysqli_query($koneksi, "DELETE FROM siswaa where nis = '$nis'");
         if ($query) {
             echo '

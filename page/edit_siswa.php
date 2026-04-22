@@ -9,8 +9,9 @@
 </div>
 
 <?php
-$nis = $_GET['nis'];
+$nis = $_GET['kd'];
 $edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM siswaa WHERE nis='$nis'"));
+
 
 if (isset($_POST['tambah'])) {
     $nis = $_POST['nis'];
@@ -19,7 +20,7 @@ if (isset($_POST['tambah'])) {
     $hp = $_POST['hp'];
     $id_kelas = $_POST['id_kelas'];
 
-    $insert = mysqli_query($koneksi, "UPDATE siswaa SET nm_siswaa='$nm_siswa' WHERE nis='$nis'");
+    $insert = mysqli_query($koneksi, "UPDATE siswaa SET nm_siswa='$nm_siswa' WHERE nis='$nis'");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
