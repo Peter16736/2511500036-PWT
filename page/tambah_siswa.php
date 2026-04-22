@@ -27,9 +27,12 @@ $_SESSION["KODE"] = $hasilkode;
 if (isset($_POST['tambah'])) {
     $kd_siswa = $_POST['kd_siswa'];
     $nm_siswa = $_POST['nm_siswa'];
+    $jenkel = $_POST['jenkel'];
+    $hp = $_POST['hp'];
+    $id_kelas = $_POST['id_kelas'];
     
 
-    $insert = mysqli_query($koneksi, "INSERT INTO siswa VALUES ('$kd_siswa','$nm_siswa')");
+    $insert = mysqli_query($koneksi, "INSERT INTO siswa VALUES ('$id_siswa','$nm_siswa','$jenkel','$hp','$id_kelas')");
 
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
@@ -54,8 +57,8 @@ if (isset($_POST['tambah'])) {
           <form method="POST" action="">
             
             <div class="form-group">
-              <label for="kd_siswa">kd siswa</label>
-              <input type="text" name="kd_siswa" 
+              <label for="id_siswa">id siswa</label>
+              <input type="text" name="id_siswa" 
                      value="<?= $hasilkode; ?>" 
                      placeholder="Id Kat" 
                      class="form-control" readonly>
@@ -65,6 +68,31 @@ if (isset($_POST['tambah'])) {
               <label for="nm_siswa">Nama siswa</label>
               <input type="text" name="nm_siswa" id="nm_siswa" 
                      placeholder="Nama siswa" 
+                     class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="jns_klmn">Jenis Kelamin</label>
+              <select name="jns_klmn" id="jns_klmn" 
+                     class="form-control">
+                     <option value="">-- Pilih --</option>
+                     <option value="L">Laki-laki</option>
+                     <option value="P">Perempuan</option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="hp">NO HP</label>
+              <input type="text" name="hp" id="hp" 
+                     placeholder="NO HP" 
+                     class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="id_kelas">Id Kelas</label>
+              <input type="text" name="id_kelas" id="id_kelas" 
+                     placeholder="Id kelas" 
                      class="form-control">
             </div>
 

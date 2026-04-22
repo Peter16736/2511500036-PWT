@@ -42,7 +42,7 @@ if (isset($_POST['tambah'])) {
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="kd_siswa">Kode Siswa</label>
-                            <input type="text" name="kd_siswa" value="<?= $edit['kd_siswa']; ?>" class="form-control" readonly>
+                            <input type="text" name="kd_siswa" value="<?= $edit['id_siswa']; ?>" class="form-control" readonly>
                         </div>
 
                         <div class="form-group">

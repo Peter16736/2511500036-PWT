@@ -33,8 +33,11 @@ if (isset($_GET['action'])) {
         <thead>
           <tr>
             <th>NO</th>
-            <th>Kode Siswa</th>
+            <th>NIS</th>
             <th>Nama Siswa</th>
+            <th>Jenis Kelamin</th>
+            <th>NO HP</th>
+            <th>Id Kelas</th>
             <th>Aksi</th>
           </tr>
         <thead>
@@ -47,14 +50,17 @@ if (isset($_GET['action'])) {
         <tbody>
           <tr>
             <td><?= $no; ?></td>
-            <td><?= $result['kd_siswa']; ?></td>
+            <td><?= $result['nis']; ?></td>
             <td><?= $result['nm_siswa']; ?></td>
+            <td><?= $result['jenkel']; ?></td>
+            <td><?= $result['hp']; ?></td>
+            <td><?= $result['id_kelas']; ?></td>
             <td>
 
-              <a href="index.php?page=siswa&action=hapus&kd=<?= $result['kd_siswa'] ?>" title="">
+              <a href="index.php?page=siswa&action=hapus&kd=<?= $result['id_siswa'] ?>" title="">
                 <span class="badge badge-danger">Hapus</span>
               </a>
-              <a href="index.php?page=edit_siswa&kd=<?= $result['kd_siswa'] ?>" title="">
+              <a href="index.php?page=edit_siswa&kd=<?= $result['id_siswa'] ?>" title="">
                 <span class="badge badge-warning">Edit</span>
               </a>
             </td>

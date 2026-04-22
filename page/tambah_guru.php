@@ -28,7 +28,7 @@ if (isset($_POST['tambah'])) {
     $kd_guru = $_POST['kd_guru'];
     $nm_guru = $_POST['nm_guru'];
     $jns_klmn = $_POST['jns_klmn'];
-    $pnddkn_trkhr = $_POST['pnddkn_trkhr'];
+    $pnddkn_trkhr = $_POST['pndkkn_trkhr'];
     $no_hp = $_POST['no_hp'];
     $almt = $_POST['almt'];
 
@@ -78,6 +78,7 @@ if (isset($_POST['tambah'])) {
                      <option value="">-- Pilih --</option>
                      <option value="L">Laki-laki</option>
                      <option value="P">Perempuan</option>
+              </select>
             </div>
 
             <div class="form-group">
